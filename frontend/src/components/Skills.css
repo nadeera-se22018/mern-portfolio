@@ -21,11 +21,18 @@
 }
 
 .marquee-wrapper {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
     position: relative;
     width: 100%;
     padding: 1rem 0 3rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.marquee-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 /* Gradient fade masks for the left and right edges */
@@ -53,11 +60,13 @@
 .skills-marquee {
     display: inline-flex;
     gap: 2rem;
-    animation: marquee 40s linear infinite;
+    animation: marquee 30s linear infinite;
     padding-left: 2rem;
 }
 
-.skills-marquee:hover {
+.skills-marquee:hover,
+.marquee-wrapper:active .skills-marquee,
+.skills-marquee:active {
     animation-play-state: paused;
 }
 
@@ -128,7 +137,7 @@
 
 .skill-icon-wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     margin-bottom: 1rem;
 }
