@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import './Skills.css';
 
 const skillCategories = [
@@ -25,29 +25,8 @@ const skillCategories = [
 ];
 
 const Skills = () => {
-    const scrollRef = useRef(null);
-    const [isHovering, setIsHovering] = useState(false);
-
-    useEffect(() => {
-        const el = scrollRef.current;
-        if (!el) return;
-
-        let animationFrameId;
-
-        const scroll = () => {
-            if (!isHovering) {
-                el.scrollLeft += 1;
-                if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
-                    el.scrollLeft = 0;
-                }
-            }
-            animationFrameId = requestAnimationFrame(scroll);
-        };
-
-        animationFrameId = requestAnimationFrame(scroll);
-
-        return () => cancelAnimationFrame(animationFrameId);
-    }, [isHovering]);
+    // Duplicate the array to create a seamless infinite marquee effect
+    const marqueeItems = [...skillCategories, ...skillCategories, ...skillCategories];
 
     return (
         <section className="skills" id="skills">
@@ -57,25 +36,23 @@ const Skills = () => {
                     <p className="section-subtitle">Technical proficiencies that power my solutions</p>
                 </div>
 
-                <div
-                    className="skills-grid"
-                    ref={scrollRef}
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
-                    onTouchStart={() => setIsHovering(true)}
-                    onTouchEnd={() => setIsHovering(false)}
-                >
-                    {skillCategories.map((category, index) => (
-                        <div className="skill-card" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
-                            <div className="skill-icon">{category.icon}</div>
-                            <h3 className="skill-category-title">{category.title}</h3>
-                            <ul className="skill-list">
-                                {category.skills.map((skill, i) => (
-                                    <li key={i} className="skill-item">{skill}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                <div className="marquee-wrapper">
+                    <div className="skills-marquee">
+                        {marqueeItems.map((category, index) => (
+                            <div className="skill-card" key={index}>
+                                <div className="skill-icon-wrapper">
+                                    <div className="skill-icon">{category.icon}</div>
+                                </div>
+                                <h3 className="skill-category-title">{category.title}</h3>
+                                <div className="skill-divider"></div>
+                                <ul className="skill-list">
+                                    {category.skills.map((skill, i) => (
+                                        <li key={i} className="skill-item">{skill}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
