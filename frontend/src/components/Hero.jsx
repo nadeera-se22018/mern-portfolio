@@ -9,7 +9,7 @@ const Hero = () => {
                     Hi, I'm <span className="gradient-text">Kasun Nadeera</span>
                 </h1>
                 <h2 className="hero-subtitle delay-1 animate-fade-in">
-                    Software Engineering Undergraduate based in Sri Lanka
+                    Software Engineering Undergraduate
                 </h2>
                 <p className="hero-description delay-2 animate-fade-in">
                     I have a strong passion for building robust, globally-standard software solutions
