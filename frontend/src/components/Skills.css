@@ -21,9 +21,31 @@
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 2rem;
+    padding-bottom: 2rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--bg-secondary);
+}
+
+.skills-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.skills-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 242, 254, 0.3);
+    border-radius: 10px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 242, 254, 0.6);
 }
 
 .skill-card {
@@ -43,6 +65,9 @@
     justify-content: center;
     text-align: center;
     height: 100%;
+    flex: 0 0 auto;
+    width: 320px;
+    max-width: 85vw;
 }
 
 .skill-card::before {
