@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './Skills.css';
 
 const skillCategories = [
@@ -25,6 +25,30 @@ const skillCategories = [
 ];
 
 const Skills = () => {
+    const scrollRef = useRef(null);
+    const [isHovering, setIsHovering] = useState(false);
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+
+        let animationFrameId;
+
+        const scroll = () => {
+            if (!isHovering) {
+                el.scrollLeft += 1;
+                if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+                    el.scrollLeft = 0;
+                }
+            }
+            animationFrameId = requestAnimationFrame(scroll);
+        };
+
+        animationFrameId = requestAnimationFrame(scroll);
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [isHovering]);
+
     return (
         <section className="skills" id="skills">
             <div className="container">
@@ -33,7 +57,14 @@ const Skills = () => {
                     <p className="section-subtitle">Technical proficiencies that power my solutions</p>
                 </div>
 
-                <div className="skills-grid">
+                <div
+                    className="skills-grid"
+                    ref={scrollRef}
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                    onTouchStart={() => setIsHovering(true)}
+                    onTouchEnd={() => setIsHovering(false)}
+                >
                     {skillCategories.map((category, index) => (
                         <div className="skill-card" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
                             <div className="skill-icon">{category.icon}</div>
