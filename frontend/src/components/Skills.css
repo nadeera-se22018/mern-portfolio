@@ -1,0 +1,115 @@
+.skills {
+    padding: 6rem 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+}
+
+.section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.08), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 242, 254, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-card:hover .skill-icon {
+    background: rgba(0, 242, 254, 0.1);
+    border-color: rgba(0, 242, 254, 0.2);
+}
+
+.skill-category-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.skill-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-item {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.skill-item::before {
+    content: '▹';
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
