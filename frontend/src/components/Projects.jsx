@@ -5,10 +5,10 @@ const projectsData = [
     {
         title: 'BinkeyitApp',
         description: 'A comprehensive E-commerce platform delivering seamless shopping experiences.',
-        technologies: ['MongoDB', 'Express.js', 'React', 'Node.js (MERN)'],
+        technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
         githubLink: '#',
         detailsLink: '#',
-        imagePlaceholder: 'E-Commerce Platform'
+        imagePlaceholder: 'BinkeyitApp'
     },
     {
         title: 'Book Fair Vendor & Stall Reservation System',
@@ -17,6 +17,14 @@ const projectsData = [
         githubLink: '#',
         detailsLink: '#',
         imagePlaceholder: 'Reservation System'
+    },
+    {
+        title: 'Nutrition Advisor',
+        description: 'An intelligent platform providing personalized dietary and health recommendations.',
+        technologies: ['MERN Stack', 'Redux', 'Tailwind'],
+        githubLink: '#',
+        detailsLink: '#',
+        imagePlaceholder: 'Nutrition App'
     }
 ];
 
@@ -24,7 +32,7 @@ const Projects = () => {
     return (
         <section className="projects" id="projects">
             <div className="container">
-                <div className="section-header">
+                <div className="section-header align-center" style={{ textAlign: 'center' }}>
                     <h2 className="section-title">Featured <span className="gradient-text">Projects</span></h2>
                     <p className="section-subtitle">A selection of my recent work</p>
                 </div>
