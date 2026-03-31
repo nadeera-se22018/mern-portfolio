@@ -3,23 +3,7 @@ import './Hero.css';
 
 const Hero = () => {
     return (
-        <section className="hero">
-            <div className="hero-content container animate-fade-in">
-                <h1 className="hero-title">
-                    Hi, I'm <span className="gradient-text">Kasun Nadeera</span>
-                </h1>
-                <h2 className="hero-subtitle delay-1 animate-fade-in">
-                    Software Engineering Undergraduate
-                </h2>
-                <p className="hero-description delay-2 animate-fade-in">
-                    I have a strong passion for building robust, globally-standard software solutions
-                    that drive meaningful impact.
-                </p>
-                <div className="hero-actions delay-3 animate-fade-in">
-                    <button className="btn btn-primary">View My Work</button>
-                    <button className="btn btn-secondary">Download CV</button>
-                </div>
-            </div>
+        <section className="hero" id="home">
             <div className="hero-overlay"></div>
             <div className="hero-background">
                 {/* Glowing Orbs */}
@@ -48,6 +32,27 @@ const Hero = () => {
                     <polyline points="16 18 22 12 16 6"></polyline>
                     <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
+            </div>
+
+            <div className="container hero-container">
+                <div className="hero-image-wrapper animate-fade-in">
+                    <div className="profile-placeholder">
+                        <div className="profile-aura"></div>
+                        <span className="profile-text">KW</span>
+                    </div>
+                </div>
+                <div className="hero-content animate-fade-in delay-1">
+                    <h1 className="hero-title">
+                        Welcome! I'm <br /><span className="gradient-text">Kasun Weerasekara</span>
+                    </h1>
+                    <h2 className="hero-subtitle">
+                        MERN Stack Developer | Software Engineering Undergraduate
+                    </h2>
+                    <div className="hero-actions">
+                        <button className="btn btn-secondary">Download CV</button>
+                        <button className="btn btn-primary">View My Work</button>
+                    </div>
+                </div>
             </div>
         </section>
     );
