@@ -11,7 +11,7 @@ const AboutMe = () => {
 
                 <div className="about-card">
                     <p className="about-text">
-                        I am Kasun Weerasekara, a passionate Software Engineering Undergraduate and a dedicated MERN Stack Developer.
+                        I am Kasun Nadeera, a passionate Software Engineering Undergraduate and a dedicated MERN Stack Developer.
                         I thrive on solving complex problems and transforming them into beautifully intuitive, responsive, and robust web applications.
                     </p>
                     <p className="about-text">
