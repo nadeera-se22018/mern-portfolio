@@ -43,7 +43,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-content animate-fade-in delay-1">
                     <h1 className="hero-title">
-                        Welcome! I'm <br /><span className="gradient-text">Kasun Weerasekara</span>
+                        Welcome! I'm <br /><span className="gradient-text">Kasun Nadeera</span>
                     </h1>
                     <h2 className="hero-subtitle">
                         MERN Stack Developer | Software Engineering Undergraduate
