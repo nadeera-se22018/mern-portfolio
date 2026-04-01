@@ -3,12 +3,12 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="footer" id="contact">
             <div className="container footer-container">
                 <div className="footer-col">
                     <h4>Contact Info</h4>
-                    <p>contact@kasunw.com</p>
-                    <p>+94 77 XXX XXXX</p>
+                    <p>kasunnadeera100@gmail.com</p>
+                    <p>+94 74 101 3068</p>
                     <p>Sri Lanka</p>
                 </div>
                 <div className="footer-col">
@@ -16,15 +16,15 @@ const Footer = () => {
                     <div className="footer-links">
                         <a href="#home">Home</a>
                         <a href="#about">About</a>
-                        <a href="#portfolio">Projects</a>
+                        <a href="#projects">Projects</a>
                     </div>
                 </div>
                 <div className="footer-col">
                     <h4>Social Media</h4>
                     <div className="footer-socials">
-                        <a href="#">GitHub</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
+                        <a href="https://github.com/nadeera-se22018" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://www.linkedin.com/in/kasun-nadeera-6bb48530a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://medium.com/@kasunnadeera100" target="_blank" rel="noopener noreferrer">Medium</a>
                     </div>
                 </div>
             </div>
