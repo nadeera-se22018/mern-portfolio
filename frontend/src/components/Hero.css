@@ -45,13 +45,13 @@
     width: 320px;
     height: 320px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 242, 254, 0.08) 100%);
-    border: 1px solid rgba(0, 242, 254, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 91, 234, 0.08) 100%);
+    border: 1px solid rgba(0, 91, 234, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    box-shadow: 0 0 40px rgba(0, 242, 254, 0.1);
+    box-shadow: 0 0 40px rgba(0, 91, 234, 0.1);
 }
 
 .profile-aura {
@@ -59,7 +59,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 80px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 0 80px rgba(0, 91, 234, 0.2);
     animation: pulseAura 3s infinite alternate;
 }
 
@@ -123,13 +123,13 @@
 
 .btn-primary {
     background: var(--accent-gradient);
-    color: #000;
-    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 91, 234, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.5);
+    box-shadow: 0 8px 25px rgba(0, 91, 234, 0.5);
 }
 
 .btn-secondary {
@@ -166,7 +166,7 @@
 .orb-1 {
     width: 450px;
     height: 450px;
-    background: #00f2fe;
+    background: #005bea;
     top: -150px;
     left: -150px;
 }
@@ -174,7 +174,7 @@
 .orb-2 {
     width: 350px;
     height: 350px;
-    background: #2563eb;
+    background: #00c6fb;
     bottom: -50px;
     right: -50px;
     animation-delay: -6s;
