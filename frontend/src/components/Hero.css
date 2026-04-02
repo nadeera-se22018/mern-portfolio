@@ -13,6 +13,18 @@
     background-position: center center;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--hero-mesh-bg);
+    pointer-events: none;
+    z-index: 0;
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -45,8 +57,8 @@
     width: 320px;
     height: 320px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 91, 234, 0.08) 100%);
-    border: 1px solid rgba(0, 91, 234, 0.3);
+    background: var(--profile-bg);
+    border: 1px solid var(--profile-border);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,7 +171,7 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(90px);
-    opacity: 0.4;
+    opacity: var(--hero-orb-opacity);
     animation: float 12s infinite ease-in-out alternate;
 }
 
