@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="portfolio-app" style={{ backgroundColor: '#0a0a0c', minHeight: '100vh' }}>
+    <div className="portfolio-app" style={{ minHeight: '100vh' }}>
       <Navbar />
       <main style={{ paddingTop: '80px' }}>
         <Hero />
