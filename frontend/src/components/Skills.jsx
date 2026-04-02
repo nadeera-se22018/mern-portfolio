@@ -24,7 +24,7 @@ const skillCategories = [
     }
 ];
 
-const SkillCard = ({ category, index }) => {
+const SkillCard = ({ category, index, isActive }) => {
     const cardRef = useRef(null);
     const [transformStyle, setTransformStyle] = useState({});
 
@@ -52,7 +52,7 @@ const SkillCard = ({ category, index }) => {
     return (
         <div
             ref={cardRef}
-            className={`skill-card auto-float floating-delay-${index % 4}`}
+            className={`skill-card auto-float floating-delay-${index % 4} ${isActive ? 'active-card' : ''}`}
             style={transformStyle}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
@@ -74,6 +74,7 @@ const SkillCard = ({ category, index }) => {
 const Skills = () => {
     const scrollContainerRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
 
     const handleScroll = (e) => {
         const container = e.target;
@@ -96,15 +97,16 @@ const Skills = () => {
     };
 
     const scrollTo = (index) => {
+        if (index < 0) index = skillCategories.length - 1;
+        if (index >= skillCategories.length) index = 0;
+        
         setActiveIndex(index);
         if (scrollContainerRef.current && scrollContainerRef.current.children[index]) {
             const container = scrollContainerRef.current;
             const child = container.children[index];
             
-            // Calculate center position without triggering page-level scrolling
-            const childRect = child.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-            const scrollOffset = (childRect.left - containerRect.left) + container.scrollLeft - (container.clientWidth / 2) + (childRect.width / 2);
+            // Calculate center position using simple offsets
+            const scrollOffset = child.offsetLeft - (container.clientWidth / 2) + (child.clientWidth / 2);
 
             container.scrollTo({
                 left: scrollOffset,
@@ -113,15 +115,20 @@ const Skills = () => {
         }
     };
 
+    const handlePrevious = () => scrollTo(activeIndex - 1);
+    const handleNext = () => scrollTo(activeIndex + 1);
+
     // Auto-play interval for the horizontal slider
     useEffect(() => {
+        if (isPaused) return;
+        
         const interval = setInterval(() => {
             const nextIndex = (activeIndex + 1) % skillCategories.length;
             scrollTo(nextIndex);
-        }, 5000); // Automove every 5 seconds
+        }, 3500); // Automove every 3.5 seconds
 
         return () => clearInterval(interval);
-    }, [activeIndex]);
+    }, [activeIndex, isPaused]);
 
     return (
         <section className="skills" id="skills">
@@ -131,14 +138,30 @@ const Skills = () => {
                     <p className="section-subtitle">Technical proficiencies that power my solutions</p>
                 </div>
 
-                <div
-                    className="skills-slider"
-                    ref={scrollContainerRef}
-                    onScroll={handleScroll}
+                <div 
+                    className="skills-nav-container"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                    onTouchStart={() => setIsPaused(true)}
+                    onTouchEnd={() => setIsPaused(false)}
                 >
-                    {skillCategories.map((category, index) => (
-                        <SkillCard key={index} index={index} category={category} />
-                    ))}
+                    <button className="nav-arrow left" onClick={handlePrevious} aria-label="Previous">
+                        &lt;
+                    </button>
+                    
+                    <div
+                        className="skills-slider"
+                        ref={scrollContainerRef}
+                        onScroll={handleScroll}
+                    >
+                        {skillCategories.map((category, index) => (
+                            <SkillCard key={index} index={index} category={category} isActive={activeIndex === index} />
+                        ))}
+                    </div>
+
+                    <button className="nav-arrow right" onClick={handleNext} aria-label="Next">
+                        &gt;
+                    </button>
                 </div>
 
                 <div className="skills-dots">
