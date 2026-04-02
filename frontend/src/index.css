@@ -12,6 +12,10 @@
   --nav-bg: rgba(18, 18, 18, 0.85);
   --nav-menu-bg: rgba(26, 26, 30, 0.95);
   --mobile-menu-shadow: rgba(0, 0, 0, 0.5);
+  --hero-dot-pattern: rgba(255, 255, 255, 0.08);
+  --hero-overlay-bg: radial-gradient(circle at center, transparent 0%, rgba(5, 5, 5, 0.9) 100%);
+  --hero-text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --hero-icon-color: #f3f4f6;
   --font-body: 'Inter', sans-serif;
 }
 
@@ -25,6 +29,10 @@
   --nav-bg: rgba(255, 255, 255, 0.85);
   --nav-menu-bg: rgba(244, 244, 245, 0.98);
   --mobile-menu-shadow: rgba(0, 0, 0, 0.1);
+  --hero-dot-pattern: rgba(0, 0, 0, 0.08);
+  --hero-overlay-bg: radial-gradient(circle at center, transparent 0%, rgba(244, 244, 245, 0.95) 100%);
+  --hero-text-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --hero-icon-color: #3f3f46;
 }
 
 * {
