@@ -1,7 +1,7 @@
 .footer {
     padding: 4rem 0 2rem 0;
-    background-color: #0d0d0d;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--footer-border);
 }
 
 .footer-container {
@@ -46,7 +46,7 @@
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--footer-border);
 }
 
 .footer-bottom p {
