@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(18, 18, 18, 0.85); /* Matches new charcoal theme */
+    background: var(--nav-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
     padding: 1rem 0;
@@ -59,8 +59,32 @@
     text-shadow: 0 0 10px rgba(0, 91, 234, 0.5);
 }
 
+.nav-action-desktop {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-action-mobile {
     display: none;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--glass-bg);
+    color: var(--accent-color);
 }
 
 .btn-hire {
@@ -120,10 +144,10 @@
         width: 70%;
         max-width: 400px;
         height: 100vh;
-        background: rgba(26, 26, 30, 0.95);
+        background: var(--nav-menu-bg);
         backdrop-filter: blur(15px);
         border-left: 1px solid var(--glass-border);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        box-shadow: -10px 0 30px var(--mobile-menu-shadow);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -153,8 +177,10 @@
     }
 
     .nav-action-mobile {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
         width: 100%;
-        text-align: center;
     }
 }
