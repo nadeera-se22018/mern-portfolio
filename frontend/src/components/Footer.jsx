@@ -7,8 +7,24 @@ const Footer = () => {
             <div className="container footer-container">
                 <div className="footer-col">
                     <h4>Contact Info</h4>
-                    <p>kasunnadeera100@gmail.com</p>
-                    <p>+94 74 101 3068</p>
+                    <p>
+                        <a
+                            href="mailto:kasunnadeera100@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            kasunnadeera100@gmail.com
+                        </a>
+                    </p>
+                    <p>
+                        <a
+                            href="tel:+94741013068"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            +94 74 101 3068
+                        </a>
+                    </p>
                     <p>Sri Lanka</p>
                 </div>
                 <div className="footer-col">
