@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Basic endpoint to test if it's working
 app.get('/', (req, res) => {
-  res.send('Backend is running');
+  res.json({ message: 'Backend API is running' });
 });
 
 app.listen(port, () => {
