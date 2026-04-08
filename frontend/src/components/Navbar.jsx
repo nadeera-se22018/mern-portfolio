@@ -30,6 +30,15 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        setIsOpen(false);
+        const contactSection = document.getElementById('contact-section');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="container nav-container">
@@ -43,6 +52,7 @@ const Navbar = () => {
                         <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
                         <li><a href="#skills" onClick={() => setIsOpen(false)}>Expertise</a></li>
                         <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
+                        <li><a href="#articles" onClick={() => setIsOpen(false)}>Articles</a></li>
                         <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
                     </ul>
                     <div className="nav-action-mobile">
@@ -53,7 +63,7 @@ const Navbar = () => {
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                             )}
                         </button>
-                        <button className="btn btn-primary btn-hire">Hire Me</button>
+                        <button className="btn btn-primary btn-hire" onClick={scrollToContact}>Hire Me</button>
                     </div>
                 </div>
 
@@ -65,7 +75,7 @@ const Navbar = () => {
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                         )}
                     </button>
-                    <button className="btn btn-primary btn-hire">Hire Me</button>
+                    <button className="btn btn-primary btn-hire" onClick={scrollToContact}>Hire Me</button>
                 </div>
 
                 <div className="mobile-toggle" onClick={toggleMenu}>
