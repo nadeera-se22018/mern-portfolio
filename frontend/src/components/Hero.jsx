@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import heroPhoto from '../assets/hero-photo.png';
 
 const Hero = () => {
     return (
@@ -36,9 +37,9 @@ const Hero = () => {
 
             <div className="container hero-container">
                 <div className="hero-image-wrapper animate-fade-in">
-                    <div className="profile-placeholder">
+                    <div className="profile-image-container">
                         <div className="profile-aura"></div>
-                        <span className="profile-text">KW</span>
+                        <img src={heroPhoto} alt="Kasun Nadeera" className="profile-image object-cover rounded-full" />
                     </div>
                 </div>
                 <div className="hero-content animate-fade-in delay-1">
