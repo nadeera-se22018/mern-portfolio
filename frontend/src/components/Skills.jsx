@@ -5,26 +5,26 @@ const skillCategories = [
     {
         title: 'Full-Stack & Frameworks',
         skills: ['MERN Stack', 'Spring Boot'],
-        icon: '🚀'
+        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Architecture & Design',
-        skills: ['Software/Systems Architecture', 'C4 Models', 'Design Patterns'],
-        icon: '🏗️'
+        skills: ['Software Architecture', 'Design Patterns', 'C4 Models'],
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Cloud & Infrastructure',
         skills: ['DevOps', 'Cloud Technologies'],
-        icon: '☁️'
+        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Academic Domains',
         skills: ['Net Centric (Web & Cloud)', 'Data Science & Engineering', 'Health Informatics'],
-        icon: '📚'
+        image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
 ];
 
-const SkillCard = ({ category, index, isActive }) => {
+const SkillCard = ({ category, index, isActive, onClick }) => {
     const cardRef = useRef(null);
     const [transformStyle, setTransformStyle] = useState({});
 
@@ -53,12 +53,15 @@ const SkillCard = ({ category, index, isActive }) => {
         <div
             ref={cardRef}
             className={`skill-card auto-float floating-delay-${index % 4} ${isActive ? 'active-card' : ''}`}
-            style={transformStyle}
+            style={{ ...transformStyle, cursor: 'pointer' }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={() => onClick(index)}
+            role="button"
+            tabIndex={0}
         >
-            <div className="skill-icon-wrapper">
-                <div className="skill-icon">{category.icon}</div>
+            <div className="skill-image-wrapper">
+                <img src={category.image} alt={category.title} className="skill-section-image" />
             </div>
             <h3 className="skill-category-title">{category.title}</h3>
             <div className="skill-divider"></div>
@@ -99,12 +102,12 @@ const Skills = () => {
     const scrollTo = (index) => {
         if (index < 0) index = skillCategories.length - 1;
         if (index >= skillCategories.length) index = 0;
-        
+
         setActiveIndex(index);
         if (scrollContainerRef.current && scrollContainerRef.current.children[index]) {
             const container = scrollContainerRef.current;
             const child = container.children[index];
-            
+
             // Calculate center position using simple offsets
             const scrollOffset = child.offsetLeft - (container.clientWidth / 2) + (child.clientWidth / 2);
 
@@ -121,7 +124,7 @@ const Skills = () => {
     // Auto-play interval for the horizontal slider
     useEffect(() => {
         if (isPaused) return;
-        
+
         const interval = setInterval(() => {
             const nextIndex = (activeIndex + 1) % skillCategories.length;
             scrollTo(nextIndex);
@@ -138,30 +141,32 @@ const Skills = () => {
                     <p className="section-subtitle">Technical proficiencies that power my solutions</p>
                 </div>
 
-                <div 
+                <div
                     className="skills-nav-container"
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
                     onTouchStart={() => setIsPaused(true)}
                     onTouchEnd={() => setIsPaused(false)}
                 >
-                    <button className="nav-arrow left" onClick={handlePrevious} aria-label="Previous">
-                        &lt;
-                    </button>
-                    
+
+
                     <div
                         className="skills-slider"
                         ref={scrollContainerRef}
                         onScroll={handleScroll}
                     >
                         {skillCategories.map((category, index) => (
-                            <SkillCard key={index} index={index} category={category} isActive={activeIndex === index} />
+                            <SkillCard
+                                key={index}
+                                index={index}
+                                category={category}
+                                isActive={activeIndex === index}
+                                onClick={scrollTo}
+                            />
                         ))}
                     </div>
 
-                    <button className="nav-arrow right" onClick={handleNext} aria-label="Next">
-                        &gt;
-                    </button>
+
                 </div>
 
                 <div className="skills-dots">
