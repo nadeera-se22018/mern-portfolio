@@ -53,17 +53,24 @@
     justify-content: flex-end;
 }
 
-.profile-placeholder {
+.profile-image-container {
     width: 320px;
     height: 320px;
-    border-radius: 50%;
-    background: var(--profile-bg);
-    border: 1px solid var(--profile-border);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.profile-image {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--profile-border);
+    box-shadow: 0 0 40px rgba(0, 91, 234, 0.3);
+    z-index: 2;
     position: relative;
-    box-shadow: 0 0 40px rgba(0, 91, 234, 0.1);
 }
 
 .profile-aura {
@@ -87,13 +94,7 @@
     }
 }
 
-.profile-text {
-    font-size: 5rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    z-index: 2;
-    opacity: 0.5;
-}
+/* Removed profile-text */
 
 .hero-content {
     flex: 1.2;
