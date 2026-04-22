@@ -50,8 +50,8 @@ const Hero = () => {
                         MERN Stack Developer | Software Engineering Undergraduate
                     </h2>
                     <div className="hero-actions">
-                        <button className="btn btn-secondary">Download CV</button>
-                        <button className="btn btn-primary">View My Work</button>
+                        <a href="/Kasun_Weerasekara_CV.pdf" download className="btn btn-secondary">Download CV</a>
+                        <a href="#projects" className="btn btn-primary">View My Work</a>
                     </div>
                 </div>
             </div>
