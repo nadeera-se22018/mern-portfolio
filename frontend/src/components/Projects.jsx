@@ -9,7 +9,7 @@ const projectsData = [
         techStack: ['MongoDB', 'Express.js', 'React', 'Node.js'],
         githubLink: '#',
         liveDemo: '#',
-        imagePlaceholder: 'BinkeyitApp'
+        image: 'https://placehold.co/600x400/1e293b/ffffff?text=Project+1'
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const projectsData = [
         techStack: ['Spring Boot', 'Java', 'REST APIs'],
         githubLink: '#',
         liveDemo: '#',
-        imagePlaceholder: 'Reservation System'
+        image: 'https://placehold.co/600x400/1e293b/ffffff?text=Project+2'
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const projectsData = [
         techStack: ['React', 'Node.js', 'Next.js'],
         githubLink: '#',
         liveDemo: '#',
-        imagePlaceholder: 'Coming Soon...'
+        image: 'https://placehold.co/600x400/1e293b/ffffff?text=Project+3'
     }
 ];
 
@@ -43,11 +43,12 @@ const Projects = () => {
                 <div className="projects-grid">
                     {projectsData.map(project => (
                         <div className="project-card" key={project.id}>
-                            <div className="project-image-container">
-                                <div className="project-image-placeholder">
-                                    <span>{project.imagePlaceholder}</span>
-                                </div>
-                            </div>
+                            <img 
+                                src={project.image} 
+                                alt={project.title} 
+                                className="w-full h-48 object-cover rounded-t-xl"
+                                style={{ width: '100%', height: '12rem', objectFit: 'cover' }}
+                            />
                             <div className="project-content">
                                 <h3 className="project-title">{project.title}</h3>
                                 <p className="project-description">{project.description}</p>
