@@ -132,6 +132,8 @@
     transition: all 0.3s ease;
     font-family: inherit;
     border: none;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-primary {
