@@ -5,21 +5,25 @@ const skillCategories = [
     {
         title: 'Full-Stack & Frameworks',
         skills: ['MERN Stack', 'Spring Boot'],
+        techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Java', 'Spring Boot'],
         image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Architecture & Design',
         skills: ['Software Architecture', 'Design Patterns', 'C4 Models'],
+        techStack: ['Microservices', 'REST APIs', 'OOP', 'SOLID', 'UML'],
         image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Cloud & Infrastructure',
         skills: ['DevOps', 'Cloud Technologies'],
+        techStack: ['AWS', 'Docker', 'Linux', 'Git', 'CI/CD'],
         image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     },
     {
         title: 'Academic Domains',
         skills: ['Net Centric (Web & Cloud)', 'Data Science & Engineering', 'Health Informatics'],
+        techStack: ['Python', 'R', 'Hadoop', 'WSO2', 'HL7'],
         image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
     }
 ];
@@ -70,6 +74,11 @@ const SkillCard = ({ category, index, isActive, onClick }) => {
                     <li key={i} className="skill-item">{skill}</li>
                 ))}
             </ul>
+            <div className="skill-tech-stack">
+                {category.techStack.map((tech, i) => (
+                    <span className="skill-tech-badge" key={i}>{tech}</span>
+                ))}
+            </div>
         </div>
     );
 };
