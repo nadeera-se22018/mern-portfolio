@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logoImg from '../assets/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container nav-container">
                 <div className="nav-logo">
-                    <span className="logo-symbol">&lt; / &gt;</span> Kasun N.
+                    <img src={logoImg} alt="Kasun N. Logo" className="nav-logo-img" /> Kasun N.
                 </div>
 
                 <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
@@ -52,7 +53,6 @@ const Navbar = () => {
                         <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
                         <li><a href="#skills" onClick={() => setIsOpen(false)}>Expertise</a></li>
                         <li><a href="#projects" onClick={() => setIsOpen(false)}>Projects</a></li>
-                        <li><a href="#gallery" onClick={() => setIsOpen(false)}>Gallery</a></li>
                         <li><a href="#articles" onClick={() => setIsOpen(false)}>Articles</a></li>
                         <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
                     </ul>
