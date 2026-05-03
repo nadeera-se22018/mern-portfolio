@@ -7,14 +7,14 @@ const Articles = () => {
       id: 1,
       title: 'An In-Depth Guide to Machine Learning',
       excerpt: 'Explore the fundamental concepts of machine learning algorithms, their applications, and how to build your first model from scratch using modern frameworks.',
-      link: '#',
+      link: 'https://medium.com/@kasunnadeera100/an-in-depth-guide-to-machine-learning-from-fundamental-concepts-to-your-first-model-53db7d1dccb6',
       image: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
       id: 2,
       title: 'Mastering React Performance Optimization',
       excerpt: 'Learn advanced techniques for optimizing your React applications, including memoization, code splitting, and managing complex UI state cleanly.',
-      link: '#',
+      link: 'https://medium.com/@kasunnadeera100/mastering-react-performance-optimization-the-ultimate-guide-60d6c48dbef8',
       image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     }
   ];
