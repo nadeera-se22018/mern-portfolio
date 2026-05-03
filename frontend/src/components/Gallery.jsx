@@ -1,10 +1,23 @@
 import React from 'react';
 import './Gallery.css';
 
+import galleryImg1 from '../assets/gallery1.jpeg';
+import galleryImg2 from '../assets/gallery2.jpeg';
+import galleryImg3 from '../assets/gallery3.jpeg';
+
 const galleryImages = [
-  'https://placehold.co/600x600/1e293b/ffffff?text=Gallery+Image',
-  'https://placehold.co/600x600/1e293b/ffffff?text=Gallery+Image',
-  'https://placehold.co/600x600/1e293b/ffffff?text=Gallery+Image'
+  {
+    src: galleryImg1,
+    caption: 'Coodinater - Open Day 2025, University of Kelaniya'
+  },
+  {
+    src: galleryImg2,
+    caption: 'Organizing Committee Member - IEEEXtreme 19.0, University of Kelaniya'
+  },
+  {
+    src: galleryImg3,
+    caption: 'Competitor - JuniorHack 7.0, Software Engineering Students\' Association, University of Kelaniya'
+  }
 ];
 
 const Gallery = () => {
@@ -17,13 +30,20 @@ const Gallery = () => {
         </div>
 
         <div className="gallery-grid">
-          {galleryImages.map((imgSrc, index) => (
+          {galleryImages.map((img, index) => (
             <div className="gallery-item glass-panel" key={index}>
-              <img 
-                src={imgSrc} 
-                alt={`Gallery visual ${index + 1}`} 
-                className="gallery-image rounded-xl"
-              />
+              <div className="gallery-image-container">
+                <img
+                  src={img.src}
+                  alt={`Gallery visual ${index + 1}`}
+                  className="gallery-image"
+                />
+              </div>
+              {img.caption && (
+                <div className="gallery-caption">
+                  <p>{img.caption}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
