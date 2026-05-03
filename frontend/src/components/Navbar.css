@@ -27,9 +27,13 @@
     z-index: 1001;
 }
 
-.logo-symbol {
-    color: var(--accent-color);
-    text-shadow: 0 0 10px rgba(0, 91, 234, 0.4);
+.nav-logo-img {
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 91, 234, 0.3);
+    border: 1px solid rgba(0, 91, 234, 0.2);
 }
 
 .nav-menu {
