@@ -147,16 +147,16 @@
 @media (max-width: 900px) {
     .about-content {
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
     }
     
     .about-image-wrapper {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .about-card {
-        padding: 2.5rem 2rem;
-        text-align: center;
+        padding: 2rem 1.5rem;
+        text-align: left;
         border-left: 1px solid rgba(255, 255, 255, 0.06);
         border-top: 3px solid rgba(0, 91, 234, 0.5);
     }
@@ -164,5 +164,11 @@
     .about-card:hover {
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         border-top: 3px solid rgba(0, 198, 251, 0.8);
+    }
+
+    .about-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
     }
 }
