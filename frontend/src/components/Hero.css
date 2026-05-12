@@ -260,11 +260,18 @@
 }
 
 @media (max-width: 900px) {
+    .hero {
+        padding-top: 5rem;
+        min-height: auto;
+        padding-bottom: 3rem;
+    }
+
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
-        padding-top: 4rem;
+        gap: 1.5rem;
+        padding-top: 0;
+        margin-top: 0;
     }
 
     .hero-image-wrapper {
@@ -277,7 +284,7 @@
     .profile-image-container {
         width: 100%;
         max-width: 100%;
-        height: 60vh;
+        height: 45vh;
     }
     
     .profile-image {
