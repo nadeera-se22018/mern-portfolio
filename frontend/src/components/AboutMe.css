@@ -1,75 +1,153 @@
 .about-me {
     padding: 6rem 0;
     background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background glow */
+.about-me::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 198, 251, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .section-header {
     margin-bottom: 3rem;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .about-content {
     display: flex;
     gap: 4rem;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1050px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .about-image-wrapper {
     flex: 1;
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+/* Glowing aura behind the image */
+.about-image-aura {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 85%;
+    background: var(--accent-gradient);
+    filter: blur(40px);
+    opacity: 0.25;
+    border-radius: 1.5rem;
+    animation: pulseAboutAura 4s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes pulseAboutAura {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+    100% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.35; }
 }
 
 .about-image {
     width: 100%;
-    max-width: 350px;
+    max-width: 380px;
     aspect-ratio: 4/5;
     object-fit: cover;
-    border-radius: 1rem;
-    border: 1px solid rgba(0, 91, 234, 0.2);
-    box-shadow: 0 10px 40px rgba(0, 91, 234, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 91, 234, 0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    z-index: 1;
+    position: relative;
 }
 
 .about-image:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0, 91, 234, 0.25);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 35px rgba(0, 91, 234, 0.3);
 }
 
 .about-card {
     flex: 1.5;
-    background: var(--glass-bg);
-    border: 1px solid rgba(0, 91, 234, 0.2);
-    border-radius: 20px;
-    padding: 3rem;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 91, 234, 0.1);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 3px solid rgba(0, 91, 234, 0.5);
+    border-radius: 24px;
+    padding: 3.5rem;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    transition: all 0.4s ease;
 }
 
 .about-card:hover {
-    border-color: rgba(0, 91, 234, 0.4);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 91, 234, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid rgba(0, 198, 251, 0.8);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 91, 234, 0.1);
     transform: translateY(-5px);
 }
 
 .about-text {
     font-size: 1.15rem;
     color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
 }
 
 .about-text:last-child {
     margin-bottom: 0;
 }
 
+.highlight-text {
+    color: var(--text-primary);
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* Underline for highlights */
+.highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-gradient);
+    opacity: 0.4;
+    transition: opacity 0.3s ease, height 0.3s ease;
+    border-radius: 2px;
+}
+
+.highlight-text:hover {
+    color: var(--accent-color);
+}
+
+.highlight-text:hover::after {
+    opacity: 0.8;
+}
+
 @media (max-width: 900px) {
     .about-content {
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 3rem;
     }
     
     .about-image-wrapper {
@@ -77,7 +155,14 @@
     }
 
     .about-card {
-        padding: 2rem;
+        padding: 2.5rem 2rem;
         text-align: center;
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 3px solid rgba(0, 91, 234, 0.5);
+    }
+    
+    .about-card:hover {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 3px solid rgba(0, 198, 251, 0.8);
     }
 }
