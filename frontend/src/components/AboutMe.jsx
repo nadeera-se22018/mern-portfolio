@@ -11,10 +11,6 @@ const AboutMe = () => {
                 </div>
 
                 <div className="about-content">
-                    <div className="about-image-wrapper">
-                        <div className="about-image-aura"></div>
-                        <img src={aboutPhoto} alt="About Kasun Nadeera" className="about-image" />
-                    </div>
                     <div className="about-card">
                         <p className="about-text">
                             I am Kasun Nadeera, a passionate <span className="highlight-text">Software Engineering Undergraduate</span> and a dedicated <span className="highlight-text">MERN Stack Developer</span>.
@@ -24,6 +20,12 @@ const AboutMe = () => {
                             With a strong foundation in <span className="highlight-text">scalable software architectures</span>, I specialize in building efficient backend services alongside <span className="highlight-text">premium frontend experiences</span>.
                             My journey involves continuous learning, exploring cloud infrastructures, and driving meaningful impact through globally-standard solutions.
                         </p>
+                    </div>
+                    <div className="about-image-wrapper">
+                        <div className="about-image-aura"></div>
+                        <div className="about-image-ring">
+                            <img src={aboutPhoto} alt="About Kasun Nadeera" className="about-image" />
+                        </div>
                     </div>
                 </div>
             </div>

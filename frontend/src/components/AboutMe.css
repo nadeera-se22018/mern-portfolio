@@ -39,46 +39,72 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    width: 290px;
+    height: 290px;
+    flex-shrink: 0;
 }
 
-/* Glowing aura behind the image */
+/* Glowing aura behind the circular image */
 .about-image-aura {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    height: 85%;
-    background: var(--accent-gradient);
-    filter: blur(40px);
-    opacity: 0.25;
-    border-radius: 1.5rem;
-    animation: pulseAboutAura 4s infinite alternate;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 91, 234, 0.35) 0%, transparent 70%);
+    filter: blur(20px);
     z-index: 0;
+    pointer-events: none;
+    animation: pulseAboutAura 4s infinite alternate;
 }
 
 @keyframes pulseAboutAura {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
-    100% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.35; }
+    0% { transform: scale(0.95); opacity: 0.5; }
+    100% { transform: scale(1.05); opacity: 0.85; }
+}
+
+/* Rotating outer gradient border ring */
+.about-image-ring {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotateRing 12s linear infinite;
+    box-shadow: 0 0 35px rgba(0, 91, 234, 0.4);
+    z-index: 1;
+}
+
+@keyframes rotateRing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .about-image {
-    width: 100%;
-    max-width: 380px;
-    aspect-ratio: 4/5;
+    width: 272px;
+    height: 272px;
     object-fit: cover;
-    border-radius: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 91, 234, 0.15);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-    z-index: 1;
-    position: relative;
+    border-radius: 50%;
+    border: 5px solid var(--bg-primary);
+    background-color: var(--bg-primary);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+    /* Cancel the rotation animation for the image itself so it stays upright */
+    animation: rotateRingInverse 12s linear infinite;
 }
 
-.about-image:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 35px rgba(0, 91, 234, 0.3);
+@keyframes rotateRingInverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.05);
 }
 
 .about-card {
@@ -146,7 +172,7 @@
 
 @media (max-width: 900px) {
     .about-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 2rem;
     }
     
