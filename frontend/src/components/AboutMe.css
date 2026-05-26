@@ -36,7 +36,6 @@
 }
 
 .about-image-wrapper {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,7 +176,8 @@
     }
     
     .about-image-wrapper {
-        margin-bottom: 0.5rem;
+        margin: 0 auto;
+        flex: none;
     }
 
     .about-card {
