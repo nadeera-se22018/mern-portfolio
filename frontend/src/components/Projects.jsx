@@ -1,18 +1,29 @@
 import React from 'react';
 import './Projects.css';
+import project1Img from '../assets/project_1_img_new.png';
+import project2Img from '../assets/project_2_img_new.png';
 
 const projectsData = [
     {
         id: 1,
         title: 'LankaGrocery',
-        description: 'A full-stack, modern online grocery shopping web application tailored for the Sri Lankan market. Built with the MERN stack featuring a clean UI, secure authentication, and a robust cart system.',
-        techStack: ['React', 'Tailwind CSS', 'Zustand', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary'],
+        description: 'Developed a full-stack, modern online grocery shopping web application tailored for the Sri Lankan market using the MERN stack. Features include a clean and responsive user interface, secure authentication, a robust shopping cart management system, and efficient media handling.',
+        techStack: ['React', 'Tailwind CSS', 'Zustand', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary API', 'Google OAuth', 'Vercel', 'AI Assistant'],
         githubLink: 'https://github.com/nadeera-se22018/LankaGrocery.git',
-        liveDemo: '#',
-        image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        liveDemo: 'https://lankagrocery.vercel.app/',
+        image: project1Img
     },
     {
         id: 2,
+        title: 'LkTranslaterAI',
+        description: 'Developed a responsive, high-performance frontend for an AI translation application powered by Google Gemini and the Groq inference engine. Features include a modern glassmorphism user interface, real-time cross-lingual translations connected to a backend REST API, and a persistent history tracking system using robust centralized state management.',
+        techStack: ['React', 'Redux', 'Tailwind CSS', 'Vite', 'Node.js', 'Google Gemini API', 'Groq API'],
+        githubLink: 'https://github.com/nadeera-se22018/ai-translator-mern.git',
+        liveDemo: 'https://lk-translater-ai.vercel.app/',
+        image: project2Img
+    },
+    {
+        id: 3,
         title: 'Book Fair Reservation System',
         description: 'A robust backend-focused reservation system featuring core reservation logic and QR code generation.',
         techStack: ['Spring Boot', 'Java', 'REST APIs'],
@@ -21,7 +32,7 @@ const projectsData = [
         image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
     },
     {
-        id: 3,
+        id: 4,
         title: 'BinkeyitApp',
         description: 'A comprehensive E-commerce platform delivering seamless shopping experiences.',
         techStack: ['MongoDB', 'Express.js', 'React', 'Node.js'],
@@ -43,12 +54,13 @@ const Projects = () => {
                 <div className="projects-grid">
                     {projectsData.map(project => (
                         <div className="project-card" key={project.id}>
-                            <img 
-                                src={project.image} 
-                                alt={project.title} 
-                                className="w-full h-48 object-cover rounded-t-xl"
-                                style={{ width: '100%', height: '12rem', objectFit: 'cover' }}
-                            />
+                            <div className="project-image-container">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="project-image"
+                                />
+                            </div>
                             <div className="project-content">
                                 <h3 className="project-title">{project.title}</h3>
                                 <p className="project-description">{project.description}</p>
