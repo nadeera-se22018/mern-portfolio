@@ -73,8 +73,8 @@
     border: none;
     box-shadow: none;
     border-radius: 0;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
     z-index: 2;
     position: relative;
     filter: drop-shadow(0 0 40px rgba(0, 91, 234, 0.4));
@@ -261,7 +261,7 @@
 
 @media (max-width: 900px) {
     .hero {
-        padding-top: 3.2rem;
+        padding-top: 2.5rem;
         min-height: auto;
         padding-bottom: 3rem;
     }
@@ -280,17 +280,17 @@
         margin-left: 0;
         height: auto;
     }
-    
+
     .profile-image-container {
         width: 100%;
         max-width: 100%;
         height: 35vh;
     }
-    
+
     .profile-image {
         object-position: bottom center;
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
     }
 
     .hero-content {
