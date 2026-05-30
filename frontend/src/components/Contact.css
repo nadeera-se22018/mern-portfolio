@@ -19,10 +19,12 @@
 }
 
 .contact-info h3 {
+    font-family: var(--font-heading);
     font-size: 2.2rem;
     color: var(--text-primary);
     margin-bottom: 1.2rem;
     font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .contact-info p {
@@ -94,6 +96,7 @@
 }
 
 .input-group label {
+    font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-secondary);
@@ -121,6 +124,7 @@
 }
 
 .submit-btn {
+    font-family: var(--font-heading);
     margin-top: 1rem;
     display: flex;
     align-items: center;
