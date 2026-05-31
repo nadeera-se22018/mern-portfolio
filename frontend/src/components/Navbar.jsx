@@ -43,9 +43,10 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="container nav-container">
-                <div className="nav-logo">
-                    <img src={logoImg} alt="Kasun N. Logo" className="nav-logo-img" /> Kasun N.
-                </div>
+                <a href="#home" className="nav-logo">
+                    <img src={logoImg} alt="Kasun N. Logo" className="nav-logo-img" />
+                    <span className="logo-text">Kasun <span className="logo-accent">N.</span></span>
+                </a>
 
                 <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
                     <ul className="nav-links">
