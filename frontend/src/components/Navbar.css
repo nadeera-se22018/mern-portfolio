@@ -20,22 +20,55 @@
 .nav-logo {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.02em;
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     z-index: 1001;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-logo-img {
-    height: 36px;
-    width: 36px;
+    height: 38px;
+    width: 38px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 91, 234, 0.3);
-    border: 1px solid rgba(0, 91, 234, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 91, 234, 0.4);
+    border: 1px solid rgba(0, 91, 234, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.logo-accent {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    filter: drop-shadow(0 2px 8px rgba(0, 198, 251, 0.3));
+}
+
+/* Logo interactive hover state */
+.nav-logo:hover .logo-text {
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.nav-logo:hover .nav-logo-img {
+    transform: rotate(6deg) scale(1.08);
+    box-shadow: 0 0 20px rgba(0, 91, 234, 0.6), 0 0 30px rgba(0, 198, 251, 0.3);
+    border-color: rgba(0, 198, 251, 0.6);
 }
 
 .nav-menu {
