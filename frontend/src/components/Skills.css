@@ -303,3 +303,194 @@
         padding: 0;
     }
 }
+
+/* Tech Scrolling Tickers Styles */
+.tech-tickers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin: 2rem auto 5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker-row-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.ticker-row-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ticker-row-title::before,
+.ticker-row-title::after {
+    content: '';
+    height: 1px;
+    width: 50px;
+    background: linear-gradient(to right, transparent, var(--text-secondary));
+    opacity: 0.3;
+}
+
+.ticker-row-title::after {
+    background: linear-gradient(to left, transparent, var(--text-secondary));
+}
+
+.ticker-row {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+    
+    /* Premium side-fade effect */
+    mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 15%, #000 85%, transparent 100%);
+}
+
+.ticker-track {
+    display: flex;
+    gap: 1.75rem;
+    width: max-content;
+    will-change: transform;
+}
+
+/* Animations for Left and Right scroll */
+@keyframes scrollLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-33.333%, 0, 0);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translate3d(-33.333%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.scroll-left {
+    animation: scrollLeft 32s linear infinite;
+}
+
+.scroll-right {
+    animation: scrollRight 32s linear infinite;
+}
+
+/* Pause scroll animation on row hover */
+.ticker-row:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+/* Glassmorphic Ticker Badges */
+.tech-badge-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 1.25rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-width: 150px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    will-change: transform, border-color, box-shadow;
+}
+
+.tech-badge-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease, opacity 0.4s ease;
+}
+
+.tech-badge-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.tech-badge-name {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: -0.01em;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* Hover effects with dynamic brand glows */
+.tech-badge-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--brand-color);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 91, 234, 0.1), 0 0 30px var(--brand-color);
+}
+
+.tech-badge-card:hover .tech-badge-icon {
+    transform: scale(1.18) rotate(4deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 8px var(--brand-color));
+}
+
+.tech-badge-card:hover .tech-badge-name {
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--brand-color);
+}
+
+/* Mobile Responsiveness for Tickers */
+@media (max-width: 768px) {
+    .tech-tickers-container {
+        gap: 2rem;
+        margin: 1.5rem auto 3.5rem;
+    }
+
+    .ticker-row-wrapper {
+        gap: 0.8rem;
+    }
+
+    .ticker-row-title {
+        font-size: 0.9rem;
+    }
+
+    .tech-badge-card {
+        padding: 1rem 1.75rem;
+        min-width: 130px;
+        gap: 0.6rem;
+    }
+
+    .tech-badge-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tech-badge-name {
+        font-size: 0.85rem;
+    }
+}
