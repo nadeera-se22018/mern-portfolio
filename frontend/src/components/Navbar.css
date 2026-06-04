@@ -36,8 +36,8 @@
     width: 38px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 0 12px rgba(0, 91, 234, 0.4);
-    border: 1px solid rgba(0, 91, 234, 0.25);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+    border: 1px solid rgba(139, 92, 246, 0.25);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -56,7 +56,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
-    filter: drop-shadow(0 2px 8px rgba(0, 198, 251, 0.3));
+    filter: drop-shadow(0 2px 8px rgba(192, 132, 252, 0.3));
 }
 
 /* Logo interactive hover state */
@@ -67,8 +67,8 @@
 
 .nav-logo:hover .nav-logo-img {
     transform: rotate(6deg) scale(1.08);
-    box-shadow: 0 0 20px rgba(0, 91, 234, 0.6), 0 0 30px rgba(0, 198, 251, 0.3);
-    border-color: rgba(0, 198, 251, 0.6);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6), 0 0 30px rgba(192, 132, 252, 0.3);
+    border-color: rgba(192, 132, 252, 0.6);
 }
 
 .nav-menu {
@@ -97,7 +97,7 @@
 
 .nav-links a:hover {
     color: var(--accent-color);
-    text-shadow: 0 0 10px rgba(0, 91, 234, 0.5);
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 }
 
 .nav-action-desktop {
