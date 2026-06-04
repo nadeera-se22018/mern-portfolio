@@ -13,7 +13,7 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(0, 198, 251, 0.05) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.05) 0%, transparent 60%);
     pointer-events: none;
     z-index: 0;
 }
@@ -51,7 +51,7 @@
     width: 330px;
     height: 330px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 91, 234, 0.35) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, transparent 70%);
     filter: blur(20px);
     z-index: 0;
     pointer-events: none;
@@ -75,7 +75,7 @@
     align-items: center;
     justify-content: center;
     animation: rotateRing 12s linear infinite;
-    box-shadow: 0 0 35px rgba(0, 91, 234, 0.4);
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.4);
     z-index: 1;
 }
 
@@ -110,7 +110,7 @@
     flex: 1.5;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-left: 3px solid rgba(0, 91, 234, 0.5);
+    border-left: 3px solid rgba(139, 92, 246, 0.5);
     border-radius: 24px;
     padding: 3.5rem;
     backdrop-filter: blur(20px);
@@ -121,8 +121,8 @@
 
 .about-card:hover {
     border-color: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid rgba(0, 198, 251, 0.8);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 91, 234, 0.1);
+    border-left: 3px solid rgba(192, 132, 252, 0.8);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(139, 92, 246, 0.1);
     transform: translateY(-5px);
 }
 
@@ -184,12 +184,12 @@
         padding: 2rem 1.5rem;
         text-align: left;
         border-left: 1px solid rgba(255, 255, 255, 0.06);
-        border-top: 3px solid rgba(0, 91, 234, 0.5);
+        border-top: 3px solid rgba(139, 92, 246, 0.5);
     }
     
     .about-card:hover {
         border-left: 1px solid rgba(255, 255, 255, 0.1);
-        border-top: 3px solid rgba(0, 198, 251, 0.8);
+        border-top: 3px solid rgba(192, 132, 252, 0.8);
     }
 
     .about-text {
