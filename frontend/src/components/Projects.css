@@ -15,7 +15,7 @@
 
 .project-card {
     background: var(--glass-bg);
-    border: 1px solid rgba(0, 91, 234, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.2);
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -23,13 +23,13 @@
     transition: all 0.4s ease;
     backdrop-filter: blur(12px);
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 91, 234, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(139, 92, 246, 0.05);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 91, 234, 0.4);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 91, 234, 0.2);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(139, 92, 246, 0.2);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -37,7 +37,7 @@
     height: 260px;
     width: 100%;
     background: rgba(0, 0, 0, 0.25);
-    border-bottom: 1px solid rgba(0, 91, 234, 0.15);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,7 @@
 
 [data-theme='light'] .project-image-container {
     background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 91, 234, 0.08);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.08);
 }
 
 .project-image {
@@ -105,19 +105,29 @@
 }
 
 .tech-badge {
-    background: rgba(0, 91, 234, 0.08);
+    background: rgba(139, 92, 246, 0.08);
     color: var(--accent-color);
     padding: 0.4rem 1rem;
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(0, 91, 234, 0.15);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.project-card .tech-badge:hover,
+.tech-badge:hover {
+    transform: translateY(-4px) scale(1.08) !important;
+    background: var(--accent-gradient) !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4) !important;
 }
 
 .project-card:hover .tech-badge {
-    background: rgba(0, 91, 234, 0.15);
-    border-color: rgba(0, 91, 234, 0.3);
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.3);
 }
 
 .project-actions {
@@ -150,7 +160,7 @@
 .p-btn-primary:hover {
     background: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 91, 234, 0.3);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
     color: #ffffff;
 }
 
