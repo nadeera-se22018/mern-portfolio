@@ -71,8 +71,8 @@
 
 .article-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 91, 234, 0.15);
-  border-color: rgba(0, 91, 234, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.3);
   background: rgba(255, 255, 255, 0.03);
 }
 
@@ -143,7 +143,7 @@
 
 .read-medium-btn:hover {
   border-color: transparent;
-  box-shadow: 0 5px 15px rgba(0, 91, 234, 0.3);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
   transform: translateY(-2px);
 }
 
