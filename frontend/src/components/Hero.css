@@ -125,7 +125,7 @@
 .orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(0, 91, 234, 0.3) 0%, rgba(0, 91, 234, 0.05) 70%, transparent 100%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.05) 70%, transparent 100%);
     top: -10%;
     left: -15%;
 }
@@ -133,7 +133,7 @@
 .orb-2 {
     width: 450px;
     height: 450px;
-    background: radial-gradient(circle, rgba(0, 198, 251, 0.3) 0%, rgba(0, 198, 251, 0.05) 70%, transparent 100%);
+    background: radial-gradient(circle, rgba(192, 132, 252, 0.3) 0%, rgba(192, 132, 252, 0.05) 70%, transparent 100%);
     bottom: -10%;
     right: -10%;
     animation-delay: -4s;
@@ -234,7 +234,7 @@
     position: absolute;
     width: 85%;
     height: 85%;
-    background: radial-gradient(circle, rgba(0, 91, 234, 0.25) 0%, rgba(0, 198, 251, 0.1) 50%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(192, 132, 252, 0.1) 50%, transparent 70%);
     border-radius: 50%;
     z-index: 1;
     filter: blur(35px);
@@ -259,12 +259,12 @@
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
     z-index: 2;
     position: relative;
-    filter: drop-shadow(0 0 30px rgba(0, 91, 234, 0.35));
+    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.35));
     transition: filter 0.5s ease;
 }
 
 .profile-image-container:hover .profile-image {
-    filter: drop-shadow(0 0 45px rgba(0, 198, 251, 0.5));
+    filter: drop-shadow(0 0 45px rgba(192, 132, 252, 0.5));
 }
 
 /* Dark floating Technology Icons around photo */
@@ -328,8 +328,8 @@
 .floating-tech-badge:hover {
     transform: scale(1.18);
     background: var(--floating-badge-bg);
-    border-color: rgba(0, 198, 251, 0.4);
-    box-shadow: 0 0 20px rgba(0, 198, 251, 0.3);
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
     cursor: pointer;
 }
 
@@ -391,17 +391,17 @@
 
 .hero-subtitle-typed {
     font-weight: 700;
-    text-shadow: 0 0 15px rgba(0, 198, 251, 0.3);
+    text-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
 }
 
 .typing-cursor {
     display: inline-block;
     width: 3px;
     height: 1.4em;
-    background: #00c6fb;
+    background: #C084FC;
     margin-left: 5px;
     animation: blinkCursor 0.8s infinite step-end;
-    box-shadow: 0 0 10px #00c6fb;
+    box-shadow: 0 0 10px #C084FC;
 }
 
 @keyframes blinkCursor {
@@ -450,7 +450,7 @@
 .btn-primary {
     background: var(--accent-gradient);
     color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 91, 234, 0.4);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
     position: relative;
     overflow: hidden;
 }
@@ -472,7 +472,7 @@
 
 .btn-primary:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 198, 251, 0.6);
+    box-shadow: 0 8px 30px rgba(192, 132, 252, 0.6);
 }
 
 .btn-primary:hover .btn-icon {
@@ -491,9 +491,9 @@
 
 .btn-secondary:hover {
     background: var(--btn-sec-hover-bg);
-    border-color: rgba(0, 198, 251, 0.4);
+    border-color: rgba(192, 132, 252, 0.4);
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 198, 251, 0.2);
+    box-shadow: 0 8px 25px rgba(192, 132, 252, 0.2);
 }
 
 .btn-secondary:hover .btn-icon {
@@ -537,20 +537,20 @@
 
 .social-btn.github:hover {
     color: var(--text-primary);
-    border-color: rgba(0, 198, 251, 0.4);
-    box-shadow: 0 0 15px rgba(0, 198, 251, 0.25);
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.25);
 }
 
 .social-btn.linkedin:hover {
-    color: #0077b5;
-    border-color: rgba(0, 119, 181, 0.4);
-    box-shadow: 0 0 15px rgba(0, 119, 181, 0.3);
+    color: #C084FC;
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
 }
 
 .social-btn.email:hover {
-    color: #00c6fb;
-    border-color: rgba(0, 198, 251, 0.4);
-    box-shadow: 0 0 15px rgba(0, 198, 251, 0.3);
+    color: #C084FC;
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
 }
 
 /* Responsive Breakpoints */
