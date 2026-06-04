@@ -60,8 +60,8 @@
   .gallery-item:hover {
     transform: scale(1.2) translateY(-25px) rotate(0deg);
     z-index: 10;
-    box-shadow: 0 25px 50px rgba(15, 82, 186, 0.6);
-    border-color: rgba(15, 82, 186, 0.8);
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.6);
+    border-color: rgba(139, 92, 246, 0.8);
   }
 }
 
