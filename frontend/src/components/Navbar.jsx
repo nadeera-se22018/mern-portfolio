@@ -44,8 +44,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="container nav-container">
                 <a href="#home" className="nav-logo">
-                    <img src={logoImg} alt="Kasun N. Logo" className="nav-logo-img" />
-                    <span className="logo-text">Kasun <span className="logo-accent">N.</span></span>
+                    <img src={logoImg} alt="KN Logo" className="nav-logo-img" />
                 </a>
 
                 <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
