@@ -2,6 +2,8 @@ import React from 'react';
 import './Projects.css';
 import project1Img from '../assets/project_1_img_new.png';
 import project2Img from '../assets/project_2_img_new.png';
+import project3Img from '../assets/Book Fair Reservation System UI2.png';
+import project4Img from '../assets/Binkeyit app UI.png';
 
 const projectsData = [
     {
@@ -29,7 +31,7 @@ const projectsData = [
         techStack: ['Spring Boot', 'Java', 'REST APIs'],
         githubLink: 'https://github.com/nadeera-se22018/sa-project.git',
         liveDemo: '#',
-        image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        image: project3Img
     },
     {
         id: 4,
@@ -38,7 +40,7 @@ const projectsData = [
         techStack: ['MongoDB', 'Express.js', 'React', 'Node.js'],
         githubLink: 'https://github.com/nadeera-se22018/BinkeyitApp.git',
         liveDemo: '#',
-        image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        image: project4Img
     }
 ];
 
